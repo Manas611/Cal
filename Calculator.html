@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Calculator By Manas</h1>
+        <div class="main">
+            <input type="text" name="text" id="screen" style="margin: 10px; width: 40%; height: 40px;">
+
+            <table class="text-center mx-auto">
+                <tbody>
+                  <tr>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">C</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">()</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">%</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">/</button></td>
+                  </tr>
+
+                  <tr>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">7</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">8</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">9</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">*</button></td>
+                  </tr>
+
+                  <tr>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">4</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">5</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">6</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">-</button></td>
+                  </tr>
+
+                  <tr>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">1</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">2</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">3</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">+</button></td>
+                  </tr>
+
+                  <tr>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">00</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">0</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">.</button></td>
+                    <td><button type="button" class="btn btn-info m-3 p-3 rounded-circle" style="font-size: 25px;">=</button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <script>
+        console.log("hello")
+        let screen=document.getElementById("screen");
+        let button=document.querySelectorAll('button');
+        let screenCal="";
+        for(item of button)
+        {
+            item.addEventListener('click',function(e){
+                let buttonText=e.target.innerText
+
+                if(buttonText=='C')
+                {
+                    screen.value="";
+                    screenCal="";
+                }
+                else if(buttonText=='=')
+                {
+                    screen.value = eval(screenCal);
+                    // console.log(screenCal)
+                }
+                else
+                {
+                    screen.value+=buttonText
+                    screenCal=screen.value
+                }
+                // console.log(buttonText)
+
+            })
+        }
+    </script>
+</body>
+</html>
